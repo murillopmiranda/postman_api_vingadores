@@ -1,0 +1,538 @@
+{
+	"info": {
+		"_postman_id": "6ec86a86-5a2d-401b-9300-641077aba683",
+		"name": "Vingadores",
+		"description": "DESCRIPTION:\n\nHere's your personal Marvel Comics API information:\n\n#### Your public key\n\n323d3b24623d3905ef1b3384d1332b21\n\n#### Your private key\n\n5cc353cf2c5ac8b68827d56915426c4c10efd3f5\n\n[Read more about how to use your keys to sign requests.](https://developer.marvel.com/documentation/authorization)\n\n#### Your rate limit:\n\n# 3000\n\ncalls/day Number of calls your application can make per day.\n\n#### Your authorized referrers\n\nList any domains that can make calls to the Marvel Comics API using your API key here:\n\n- delete",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19547442"
+	},
+	"item": [
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Characters_All",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Teste de validação do status code = 200",
+									"pm.test(\"Resultado: Status code igual a 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Teste de validação do status code = OK",
+									"pm.test(\"Resultado: Status code igual a OK\", function () {",
+									"        pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"//Teste de validação de tempo de execução menor que 3 segundos",
+									"pm.test(\"Resultado: O tempo do response é menor que 3 segundos\", function () {",
+									"        pm.expect(pm.response.responseTime).to.be.below(3000);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "5cc353cf2c5ac8b68827d56915426c4c10efd3f5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characters_By_Name",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Teste de validação do status code = 200",
+									"pm.test(\"Resultado: Status code igual a 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Teste de validação do status code = OK",
+									"pm.test(\"Resultado: Status code igual a OK\", function () {",
+									"        pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"//Teste de validação de tempo de execução menor que 3 segundos",
+									"pm.test(\"Resultado: O tempo do response é menor que 3 segundos\", function () {",
+									"        pm.expect(pm.response.responseTime).to.be.below(3000);",
+									"});",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "5cc353cf2c5ac8b68827d56915426c4c10efd3f5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7&name=hulk",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								},
+								{
+									"key": "name",
+									"value": "hulk"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characters_By_ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Teste de validação do status code = 200",
+									"pm.test(\"Resultado: Status code igual a 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Teste de validação do status code = OK",
+									"pm.test(\"Resultado: Status code igual a OK\", function () {",
+									"        pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"//Teste de validação de tempo de execução menor que 3 segundos",
+									"pm.test(\"Resultado: O tempo do response é menor que 3 segundos\", function () {",
+									"        pm.expect(pm.response.responseTime).to.be.below(3000);",
+									"});",
+									"",
+									"",
+									"",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "5cc353cf2c5ac8b68827d56915426c4c10efd3f5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1009351?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1009351"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "noauth"
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Comics",
+			"item": [
+				{
+					"name": "Comics",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "5cc353cf2c5ac8b68827d56915426c4c10efd3f5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/comics?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"comics"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Comics_By_ID",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "5cc353cf2c5ac8b68827d56915426c4c10efd3f5",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/comics/77060?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"comics",
+								"77060"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Hulk_Automacao",
+			"item": [
+				{
+					"name": "Characters_By_ID_Hulk",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"//Teste de validação do status code = 200",
+									"pm.test(\"Resultado: Status code igual a 200\", function () {",
+									"        pm.response.to.have.status(200);",
+									"});",
+									"",
+									"//Teste de validação do status code = OK",
+									"pm.test(\"Resultado: Status code igual a OK\", function () {",
+									"        pm.response.to.have.status(\"OK\");",
+									"});",
+									"",
+									"//Teste de validação de tempo de execução menor que 3 segundos",
+									"pm.test(\"Resultado: O tempo do response é menor que 3 segundos\", function () {",
+									"        pm.expect(pm.response.responseTime).to.be.below(3000);",
+									"});",
+									"",
+									"//Teste para validar o valor de Comics de acordo com a variável de ambiente",
+									"pm.test(\"Número de Comics do Hulk está correto com o número da variável do response\", function () {",
+									"  pm.expect(pm.response.json().data.results[0].comics.available).to.eql(pm.environment.get(\"id_hulk_comics\"));",
+									"  ",
+									"});",
+									"",
+									"//Teste para validar o valor de Series de acordo com a variável de ambiente",
+									"pm.test(\"Número de Series do Hulk está correto com o número da variável do response\", function () {",
+									"  pm.expect(pm.response.json().data.results[0].series.available).to.eql(pm.environment.get(\"id_hulk_series\"));",
+									"  ",
+									"});",
+									"",
+									"//Teste para validar o valor de Stories de acordo com a variável de ambiente",
+									"pm.test(\"Número de Stories do Hulk está correto com o número da variável do response\", function () {",
+									"  pm.expect(pm.response.json().data.results[0].stories.available).to.eql(pm.environment.get(\"id_hulk_stories\"));",
+									"  ",
+									"});",
+									"",
+									"//Teste para validar o valor de Events de acordo com a variável de ambiente",
+									"pm.test(\"Número de Events do Hulk está correto com o número da variável do response\", function () {",
+									"  pm.expect(pm.response.json().data.results[0].events.available).to.eql(pm.environment.get(\"id_hulk_events\"));",
+									"  ",
+									"});",
+									"",
+									"",
+									"",
+									"//Teste para validar valores de Comics",
+									"//pm.test(\"Comics Hulk \", function () {",
+									"//    var jsonData = pm.response.json();",
+									"//    pm.expect(jsonData.data.results[0].comics.available).to.eql(1715);",
+									"//});",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"",
+									"/// [LOGS HULK]",
+									"//Log para exibir o número total de Comics do Hulk",
+									"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+									"    console.log(\"O número de Comics do Hulk é igual\",pm.environment.get('id_hulk_comics'));",
+									"};",
+									"",
+									"//Log para exibir o número total de Series do Hulk",
+									"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+									"    console.log(\"O número de Series do Hulk é igual\",pm.environment.get('id_hulk_series'));",
+									"};",
+									"",
+									"//Log para exibir o número total de Stories do Hulk",
+									"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+									"    console.log(\"O número de Stories do Hulk é igual\",pm.environment.get('id_hulk_stories'));",
+									"};",
+									"",
+									"//Log para exibir o número total de Events do Hulk",
+									"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+									"    console.log(\"O número de Events do Hulk é igual\",pm.environment.get('id_hulk_events'));",
+									"};",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://gateway.marvel.com/v1/public/characters/1009351?ts=1656165747&apikey=323d3b24623d3905ef1b3384d1332b21&hash=983b13dcabca28281d9a9518184091b7",
+							"protocol": "http",
+							"host": [
+								"gateway",
+								"marvel",
+								"com"
+							],
+							"path": [
+								"v1",
+								"public",
+								"characters",
+								"1009351"
+							],
+							"query": [
+								{
+									"key": "ts",
+									"value": "1656165747"
+								},
+								{
+									"key": "apikey",
+									"value": "323d3b24623d3905ef1b3384d1332b21"
+								},
+								{
+									"key": "hash",
+									"value": "983b13dcabca28281d9a9518184091b7"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// [[ USER TESTS ]]:",
+					"//Setando uma variável de ambiente pra reaproveitar o \"id_character\" do request \"Characters_By_ID_Hulk\"",
+					"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+					"    pm.environment.set(\"id_hulk\",pm.response.json().data.results[0].id)",
+					"};",
+					"",
+					"//Setando uma variável de ambiente pra reaproveitar o \"id_character_comics\" do request \"Characters_By_ID_Hulk\"",
+					"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+					"    pm.environment.set(\"id_hulk_comics\",pm.response.json().data.results[0].comics.available)",
+					"};",
+					"",
+					"//Setando uma variável de ambiente pra reaproveitar o \"id_character_series\" do request \"Characters_By_ID_Hulk\"",
+					"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+					"    pm.environment.set(\"id_hulk_series\",pm.response.json().data.results[0].series.available)",
+					"};",
+					"",
+					"//Setando uma variável de ambiente pra reaproveitar o \"id_character_stories\" do request \"Characters_By_ID_Hulk\"",
+					"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+					"    pm.environment.set(\"id_hulk_stories\",pm.response.json().data.results[0].stories.available)",
+					"};",
+					"",
+					"//Setando uma variável de ambiente pra reaproveitar o \"id_character_events\" do request \"Characters_By_ID_Hulk\"",
+					"if (pm.info.requestName=='Characters_By_ID_Hulk'){",
+					"    pm.environment.set(\"id_hulk_events\",pm.response.json().data.results[0].events.available)",
+					"};"
+				]
+			}
+		}
+	]
+}
